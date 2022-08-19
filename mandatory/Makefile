@@ -1,7 +1,7 @@
 #source files
 SRC = 	ft_printf.c \
-		libft_functions.c \
 		auxiliar_functions.c \
+		main.c \
 
 #tranform into .o
 OBJ = $(SRC:.c=.o)
@@ -21,21 +21,24 @@ RM = rm -f
 ##RULES
 #compile 
 .c.o:
-		cc $(FLAGS) -c $< -o $(<:.c=.o)
+			cc $(FLAGS) -c $< -o $(<:.c=.o)
 
 #rule name - make library
 $(NAME): $(OBJ) $(HEADER)
-		ar -rcs $(NAME) $(OBJ) $(HEADER)
+			make -C ./libft
+			mv ./libft/libft.a ./$(NAME)
+			ar -rcs $@ $^
 
 #make libft.a
 all: $(NAME)
 
 #remove objects
 clean: 
-		$(RM) $(OBJ)
+			$(RM) $(OBJ)
 #remove all
 fclean: clean
-		$(RM) $(NAME)
+			$(RM) $(NAME)
+			make clean -C ./libft
 #clear all
 re: fclean all
 
@@ -45,4 +48,4 @@ re: fclean all
 
 ##REMOVER
 cavalinho:
-		gcc $(SRC) libftprintf.h && clear && ./a.out
+			gcc main.c libftprintf.a && clear && ./a.out
