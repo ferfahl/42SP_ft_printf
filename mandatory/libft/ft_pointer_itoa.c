@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_hex_itoa.c                                      :+:      :+:    :+:   */
+/*   ft_pointer_itoa.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 00:19:50 by feralves          #+#    #+#             */
-/*   Updated: 2022/08/20 00:18:21 by feralves         ###   ########.fr       */
+/*   Updated: 2022/08/20 00:18:52 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_counter(unsigned int number);
-static void	ft_write(int size, char *string, unsigned int n);
+static int	ft_counter(unsigned long int number);
+static void	ft_write(int size, char *string, unsigned long int n);
 
-char	*ft_hex_itoa(unsigned int n)
+char	*ft_pointer_itoa(unsigned long int n)
 {
 	int		size;
 	char	*string;
@@ -30,7 +30,7 @@ char	*ft_hex_itoa(unsigned int n)
 	return (string);
 }
 
-static int	ft_counter(unsigned int number)
+static int	ft_counter(unsigned long int number)
 {
 	int	count;
 
@@ -43,7 +43,7 @@ static int	ft_counter(unsigned int number)
 	return (count);
 }
 
-static void	ft_write(int size, char *string, unsigned int n)
+static void	ft_write(int size, char *string, unsigned long int n)
 {
 	while (size > 0)
 	{

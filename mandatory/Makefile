@@ -1,7 +1,6 @@
 #source files
 SRC = 	ft_printf.c \
 		auxiliar_functions.c \
-		main.c \
 
 #tranform into .o
 OBJ = $(SRC:.c=.o)

@@ -1,4 +1,4 @@
-#include "libftprintf.h"
+#include "ft_printf.h"
 #include <limits.h>
 
 int main()
@@ -11,6 +11,6 @@ int main()
     printf("cavalinho %p\n", free);
     printf("cavalinho %%\n"); */
 //    printf("\n%d\n", printf("cavalinho %s rapidão\n", NULL));
-	printf("\n%d\n", ft_printf("ft_printf teste %p\n", NULL));
-	printf("\n%d\n", printf(".  printf teste %p\n", NULL));
+	printf("\n%d\n", ft_printf("ft_printf teste %p\n", 0));
+	printf("\n%d\n", printf(".  printf teste %p\n", 0));
 }
