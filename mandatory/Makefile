@@ -7,7 +7,7 @@ SRC = 	ft_printf.c \
 OBJ = $(SRC:.c=.o)
 
 #header source
-HEADER = libftprintf.h
+HEADER = ft_printf.h
 
 #static library's name
 NAME = libftprintf.a
@@ -19,7 +19,7 @@ FLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
 ##RULES
-#compile 
+#compile
 .c.o:
 			cc $(FLAGS) -c $< -o $(<:.c=.o)
 
@@ -33,7 +33,7 @@ $(NAME): $(OBJ) $(HEADER)
 all: $(NAME)
 
 #remove objects
-clean: 
+clean:
 			$(RM) $(OBJ)
 #remove all
 fclean: clean
@@ -48,4 +48,4 @@ re: fclean all
 
 ##REMOVER
 cavalinho:
-			gcc main.c libftprintf.a && clear && ./a.out
+			cc -g3 main.c libftprintf.a && clear && ./a.out

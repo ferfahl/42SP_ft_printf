@@ -2,6 +2,7 @@
 SRC = 	ft_atoi.c \
 		ft_bzero.c \
 		ft_calloc.c \
+		ft_hex_itoa.c \
 		ft_isalnum.c \
 		ft_isalpha.c \
 		ft_isascii.c \
@@ -33,6 +34,7 @@ SRC = 	ft_atoi.c \
 		ft_substr.c \
 		ft_tolower.c \
 		ft_toupper.c \
+		ft_uitoa.c \
 
 #tranform into .o
 OBJ = $(SRC:.c=.o)
@@ -50,7 +52,7 @@ FLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
 ##RULES
-#compile 
+#compile
 .c.o:
 		cc $(FLAGS) -c $< -o $(<:.c=.o)
 
@@ -62,7 +64,7 @@ $(NAME): $(OBJ) $(HEADER)
 all: $(NAME)
 
 #remove objects
-clean: 
+clean:
 		$(RM) $(OBJ)
 #remove all
 fclean: clean
