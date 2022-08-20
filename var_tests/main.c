@@ -5,7 +5,7 @@ int test_int(int num_args, ...);
 
 int main(void)
 {
-    test_int(7, 12, 5, 4);
+    test_int(3, 8, 5, 4);
 
     return 0;
 }

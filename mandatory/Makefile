@@ -1,6 +1,7 @@
 #source files
 SRC = 	ft_printf.c \
 		auxiliar_functions.c \
+		auxiliar_functions_more.c \
 
 #tranform into .o
 OBJ = $(SRC:.c=.o)
@@ -43,8 +44,3 @@ re: fclean all
 
 #avoids double inclusion
 .PHONY: all clean fclean re
-
-
-##REMOVER
-cavalinho:
-			cc -g3 main.c libftprintf.a && clear && ./a.out

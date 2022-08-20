@@ -6,7 +6,7 @@
 /*   By: feralves < feralves@student.42sp.org.br    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 23:06:37 by feralves          #+#    #+#             */
-/*   Updated: 2022/08/19 23:59:48 by feralves         ###   ########.fr       */
+/*   Updated: 2022/08/20 01:38:24 by feralves         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ int	search_placeholder(char placeholder, va_list args)
 int	ft_printf(const char *format, ...)
 {
 	va_list	args;
-	va_start(args, format);
-	int	index;
-	int	count;
+	int		index;
+	int		count;
 
+	va_start(args, format);
 	index = 0;
 	count = 0;
 	while (format[index])
@@ -51,7 +51,8 @@ int	ft_printf(const char *format, ...)
 		}
 		else
 		{
-			count+= write(1, &format[index], 1);
+			write(1, &format[index], 1);
+			count += 1;
 		}
 		index++;
 	}
